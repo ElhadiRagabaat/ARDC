@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">ARDC</string>
+
+    <string name="bold" tools:ignore="ReferenceType">@font/latobold</string>
+    <string name="regular" tools:ignore="ReferenceType">@font/latoregular</string>
+    <string name="light" tools:ignore="ReferenceType">@font/latolight</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+
+    <string name="about_ardc">
+African Refugee Development Center
+The African Refugee Development Center is a grassroots, community-based nonprofit organization
+        that was founded in 2004 by African asylum-seekers and Israeli citizens in order
+        to protect, assist, and empower African refugees and asylum-seekers in Israel. ARDC began
+        its work as a humanitarian aid organization, and over time has adapted to fit community
+        needs. Currently, ARDC works to address gaps in services created by harsh governmental policies in 4 key sectors: education, livelihoods, advocacy, and rights empowerment. To date, ARDC has served over 15,000 asylum-seekers from a number of countries and operates various educational programs seeking to deepen
+        the social and economic inclusion of asylum-seekers throughout Israel.</string>
+</resources>

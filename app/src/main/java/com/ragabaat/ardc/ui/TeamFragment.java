@@ -1,10 +1,9 @@
-package com.ragabaat.ardc.ui.notice;
+package com.ragabaat.ardc.ui;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -19,52 +18,42 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ragabaat.ardc.R;
+import com.ragabaat.ardc.TeamAdapter;
+import com.ragabaat.ardc.TeamData;
+import com.ragabaat.ardc.ui.notice.NoticeAdapter;
+import com.ragabaat.ardc.ui.notice.NoticeData;
 
 import java.util.ArrayList;
 
+public class TeamFragment extends Fragment {
 
-public class NoticeFragment extends Fragment {
 
-
-    private RecyclerView deleteNoticeRecycler;
+    private RecyclerView teacherRecycler;
     private ProgressBar progressBar;
-    private ArrayList<NoticeData> list;
-    private NoticeAdapter adapter;
-    LinearLayoutManager layoutManager;
-
     private DatabaseReference reference;
 
+    private ArrayList<TeamData> list;
+    private TeamAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notice, container, false);
+         View view = inflater.inflate(R.layout.fragment_team, container, false);
+
+         progressBar= view.findViewById(R.id.progressBar1);
+         teacherRecycler = view.findViewById(R.id.teamRecycler);
+
+        reference = FirebaseDatabase.getInstance().getReference().child("team");
 
 
-        progressBar = view.findViewById(R.id.progressBar);
+        getData();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Notice");
-
-        deleteNoticeRecycler = view.findViewById(R.id.deleteNoticeRecycler);
-        layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setReverseLayout(true);
-        layoutManager.setStackFromEnd(true);
-        deleteNoticeRecycler.setLayoutManager(layoutManager);
-        deleteNoticeRecycler.setHasFixedSize(true);
-
-
-        /////func to get the notice
-        getNotice();
-
-
-        return view;
+         return view;
 
     }
 
-
-
-    private void getNotice() {
+    private void getData() {
 
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -75,15 +64,15 @@ public class NoticeFragment extends Fragment {
 
                 for (DataSnapshot snapshot : datasnapshot.getChildren()) {
 
-                    NoticeData data = snapshot.getValue(NoticeData.class);
+                    TeamData data = snapshot.getValue(TeamData.class);
                     list.add(0,data);
 
 
                 }
-                adapter = new NoticeAdapter(getContext(), list);
+                adapter = new TeamAdapter(list, getActivity());
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
-                deleteNoticeRecycler.setAdapter(adapter);
+               teacherRecycler.setAdapter(adapter);
 
 
 
@@ -104,5 +93,4 @@ public class NoticeFragment extends Fragment {
 
 
     }
-
 }

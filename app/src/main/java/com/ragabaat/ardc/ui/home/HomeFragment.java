@@ -39,7 +39,11 @@ private ImageView map;
 
 
 
+
+
        setSliderViews();
+
+
        map = view .findViewById(R.id.map);
        map.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -64,29 +68,34 @@ private ImageView map;
 
         for (int i = 0; i < 5; i++){
 
-            DefaultSliderView sliderView = new DefaultSliderView(getContext());
+           DefaultSliderView sliderView = new DefaultSliderView(getContext());
+
+
             switch (i){
 
                 case 0 :
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/Notice%2F%5BB%4072dd32jpg?alt=media&token=89ccda03-fa8d-4683-b7ff-4a052b9b8835");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/gallery%2F%5BB%40e28f12ejpg?alt=media&token=f064ccf5-91ca-4834-b420-361599bfa278");
                     break;
 
                 case 1 :
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/Notice%2F%5BB%4075b2801jpg?alt=media&token=08619e09-040c-4e3b-9e9d-e8a9d3164a1e");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/gallery%2F%5BB%40dc0685cjpg?alt=media&token=7594ad95-04b4-4637-b735-7d00cb089ef6");
                     break;
 
 
                 case 3 :
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/Notice%2F%5BB%408acf0d3jpg?alt=media&token=a77f06b1-283e-4f3e-a2a5-d1f21e03e3a4");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/gallery%2F%5BB%40c32e218jpg?alt=media&token=c49e4376-d2b0-43d4-b253-e25c2aa3967b");
                     break;
 
                 case 4 :
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/Notice%2F%5BB%4096b190cjpg?alt=media&token=330c8f8d-d090-43ab-8425-508190689cf6");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/admincollage.appspot.com/o/gallery%2F%5BB%401d0bcbdjpg?alt=media&token=ebe24fb9-623b-456c-a008-cda6f1320cea");
                     break;
 
             }
             sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP);
             sliderViewl.addSliderView(sliderView);
+
+
+
         }
     }
 }

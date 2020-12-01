@@ -7,12 +7,12 @@
 
 
     <item android:id="@id/navigation_notice"
-        android:title="Notice"
+        android:title="Blog"
         android:icon="@drawable/ic__book_online_24"/>
 
     <item android:id="@id/navigation_faculty"
-        android:title="Faculty"
-        android:icon="@drawable/ic_faculty"/>
+        android:title="Teachers"
+        android:icon="@drawable/ic_baseline_group_24"/>
 
     <item android:id="@id/navigation_gallery"
         android:title="Gallery"

@@ -3,17 +3,23 @@ package com.ragabaat.ardc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.ragabaat.ardc.ebook.EbookActivity;
+import com.ragabaat.ardc.ui.TeamFragment;
 
 import java.util.Objects;
 
@@ -63,34 +69,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
 
-            case R.id.navigation_developer:
-                Toast.makeText(this,"Devevloper",Toast.LENGTH_LONG).show();
-                break;
 
-            case R.id.navigation_video:
-                Toast.makeText(this,"Video",Toast.LENGTH_LONG).show();
-                break;
-
-            case R.id.navigation_rat:
-                Toast.makeText(this,"Rate us",Toast.LENGTH_LONG).show();
-                break;
 
             case R.id.navigation_ebook:
-                Toast.makeText(this,"Ebook",Toast.LENGTH_LONG).show();
+
+                startActivity(new Intent(this, EbookActivity.class));
                 break;
 
             case R.id.navigation_website:
-                Toast.makeText(this,"Website",Toast.LENGTH_LONG).show();
+
+                String url = "https://www.ardc-israel.org/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
                 break;
 
-            case R.id.navigation_share:
-                Toast.makeText(this,"Share",Toast.LENGTH_LONG).show();
+            case R.id.navigation_teacher:
+              startActivity(new Intent(this, TeamActivity2.class));
                 break;
 
-            case R.id.navigation_theme:
-                Toast.makeText(this,"Themes",Toast.LENGTH_LONG).show();
-                break;
+
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }else {
+
+            super.onBackPressed();
+        }
+
     }
 }

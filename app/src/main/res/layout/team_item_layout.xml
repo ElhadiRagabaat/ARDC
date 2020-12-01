@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+
+                <TextView
+                    android:id="@+id/teamNamedec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:text="Ahmad Adam"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+
+
+            </LinearLayout>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teamImagedec"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.5"
+                android:src="@drawable/teacher" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/teamBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+
+
+            android:text="Team Bioo"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:layout_marginRight="170dp" />
+
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
